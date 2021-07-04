@@ -27,7 +27,9 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-primary fixed-top" id="navbar">
             <div className="container">
-                <a className="navbar-brand" href="/">Laurcons Personal</a>
+                <Link href="/">
+                    <a className="navbar-brand">Laurcons Personal</a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-coll">
                     <span className="navbar-toggler-icon"></span>
                 </button>

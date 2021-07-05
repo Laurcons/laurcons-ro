@@ -48,6 +48,7 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
+                    <div className="ms-auto text-light my-2">Unleash your imagination</div>
                 </div>
             </div>
         </nav>

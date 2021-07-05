@@ -34,6 +34,7 @@ export const getServerSideProps: GetServerSideProps = (context) => {
 export default function ProjectsPage(props: { dbProjects: { project: SerializableProject, versionCount: number }[] }) {
     return <>
         <Head>
+            <title>Projects - Laurcons Personal</title>
             <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" defer></script>
         </Head>
         <div className="row" data-masonry='{"percentPositions": true}'>

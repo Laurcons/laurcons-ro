@@ -3,7 +3,7 @@ import { Mysql } from "../../lib/database";
 import { ParseDbProject, Project, ProjectVersion, SerializableProjectVersion } from "../../lib/dbtypes";
 import { SerializableProject, ParseDbProjectVersion } from './../../lib/dbtypes';
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+import Head from "next/head";
 import classnames from 'classnames';
 import css from "../../styles/ProjectId.module.scss";
 
@@ -41,6 +41,9 @@ export const getServerSideProps: GetServerSideProps = (context) => {
 export default function ProjectId(props: {dbProject: SerializableProject, dbVersions: SerializableProjectVersion[] }) {
     const project = Project(props.dbProject);
     return <>
+        <Head>
+            <title>{project.title} - Laurcons Personal</title>
+        </Head>
         <div className="bg-light border border-primary rounded p-3 mb-3">
             <div className="row">
                 <div className="col">

@@ -16,6 +16,12 @@ const pages = [
         pathnameMatch: /^\/projects/ 
     },
     {
+        name: "contact",
+        displayName: "Contact",
+        href: "/contact",
+        pathnameMatch: /^\/contact/
+    },
+    {
         name: "yt-channel",
         displayName: "YouTube",
         href: "https://laurcons.ro/yt"

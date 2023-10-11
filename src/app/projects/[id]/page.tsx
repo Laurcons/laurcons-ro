@@ -1,14 +1,11 @@
-'use client';
-
 import A from '@/components/ui/A';
 import Heading from '@/components/ui/Heading';
 import { Projects } from '@/data/projects';
 import dayjs from 'dayjs';
-import { useParams } from 'next/navigation';
 import Markdown from 'react-markdown';
 
 export function generateStaticParams() {
-  return Projects.map((proj) => ({ id: proj.id }));
+  return Projects.map((proj) => ({ id: proj.id.toString() }));
 }
 
 function TargetBlankA(props: JSX.IntrinsicElements['a']) {

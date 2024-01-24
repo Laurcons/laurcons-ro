@@ -15,6 +15,7 @@ jobs:
 
     - name: Merge changes from 'main'
       run: |
+        git fetch origin
         git checkout main
         git pull
         git checkout build

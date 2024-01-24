@@ -8,10 +8,6 @@ jobs:
     name: Build Next.JS project
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 'main' branch
-      uses: actions/checkout@v4
-      with:
-        ref: build
     - name: Checkout 'build' branch
       uses: actions/checkout@v4
       with:
@@ -19,6 +15,9 @@ jobs:
 
     - name: Merge changes from 'main'
       run: |
+        git checkout main
+        git pull
+        git checkout build
         git merge -X theirs --no-commit origin/main
         
     - name: Setup Node JS

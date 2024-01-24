@@ -15,7 +15,7 @@ jobs:
 
     - name: Merge changes from 'main'
       run: |
-        git merge -X theirs --no-commit origin main
+        git merge -X theirs --no-commit main
         
     - name: Setup Node JS
       uses: actions/setup-node@v3

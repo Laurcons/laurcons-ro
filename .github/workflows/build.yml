@@ -13,6 +13,11 @@ jobs:
       with:
         ref: build
         fetch-depth: 0
+    
+    - name: Configure git
+      run: |
+        git config --local user.name Github Bot
+        git config --local user.email actions@github.com
 
     - name: Merge changes from 'main'
       run: |
@@ -36,11 +41,6 @@ jobs:
       
     - name: Build project
       run: npm run build
-    
-    - name: Configure git
-      run: |
-        git config --local user.name Github Bot
-        git config --local user.email actions@github.com
         
     - name: Make new commit with changes and build
       run: |

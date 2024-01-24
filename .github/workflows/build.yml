@@ -16,7 +16,7 @@ jobs:
     
     - name: Configure git
       run: |
-        git config --local user.name Github Bot
+        git config --local user.name github-actions
         git config --local user.email actions@github.com
 
     - name: Merge changes from 'main'
@@ -34,7 +34,9 @@ jobs:
     - name: Retrieve dependencies from cache
       uses: actions/cache@v4
       with:
-        path: node_modules
+        path: |
+          node_modules
+          .next/cache
         key: node_modules
         
     - name: Update dependencies
@@ -43,9 +45,9 @@ jobs:
     - name: Build project
       run: npm run build
         
-    - name: Make new commit with changes and build
+    - name: Make new commit with changes
       run: |
         git add .
-        git commit -m "Merged from main and built"
+        git commit -m "CI: merged from main and built"
         git push
     

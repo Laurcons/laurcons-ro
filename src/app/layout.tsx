@@ -1,11 +1,15 @@
 import { Fonts } from '@/lib/fonts';
 import './globals.css';
-import { Inter } from 'next/font/google';
 import Banner from '@/components/HomeBanner';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Laurcons Personal',
   description: "Laurcons' Personal Website",
+  openGraph: {
+    title: 'Laurcons Personal',
+    description: "Laurcons' Personal Website",
+  },
 };
 
 export default function RootLayout({

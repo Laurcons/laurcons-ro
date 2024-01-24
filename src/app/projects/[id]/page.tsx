@@ -2,10 +2,30 @@ import A from '@/components/ui/A';
 import Heading from '@/components/ui/Heading';
 import { Projects } from '@/data/projects';
 import dayjs from 'dayjs';
+import { Metadata } from 'next';
 import Markdown from 'react-markdown';
 
 export function generateStaticParams() {
   return Projects.map((proj) => ({ id: proj.id.toString() }));
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Metadata {
+  const project = Projects.find((pr) => pr.id === parseInt(params.id))!;
+  return {
+    title: `${project.title} - Laurcons Personal`,
+    description: project.shortDescMarkdown,
+    openGraph: {
+      title: `${project.title} - Laurcons Personal`,
+      description: project.shortDescMarkdown,
+      type: 'article',
+      images: project.imageUrl ? [project.imageUrl] : undefined,
+      publishedTime: project.updateDate.toISOString(),
+    },
+  };
 }
 
 function TargetBlankA(props: JSX.IntrinsicElements['a']) {

@@ -1,0 +1,51 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Build Next.JS project
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 'build' branch
+      uses: actions/checkout@v4
+      with:
+        ref: build
+        fetch-depth: 0
+    
+    - name: Configure git
+      run: |
+        git config --local user.name Github Bot
+        git config --local user.email actions@github.com
+
+    - name: Merge changes from 'main'
+      run: |
+        git fetch origin
+        git checkout main
+        git checkout build
+        git merge -X theirs --no-commit origin/main
+        
+    - name: Setup Node JS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        
+    - name: Retrieve dependencies from cache
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: node_modules
+        
+    - name: Update dependencies
+      run: npm i
+      
+    - name: Build project
+      run: npm run build
+        
+    - name: Make new commit with changes and build
+      run: |
+        git add .
+        git commit -m "Merged from main and built"
+        git push
+    

@@ -47,4 +47,5 @@ jobs:
       run: |
         git add .
         git commit -m "Merged from main and built"
+        git push
     

@@ -12,12 +12,12 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: build
+        fetch-depth: 0
 
     - name: Merge changes from 'main'
       run: |
         git fetch origin
         git checkout main
-        git pull
         git checkout build
         git merge -X theirs --no-commit origin/main
         

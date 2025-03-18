@@ -21,6 +21,27 @@ export interface Project {
 
 export const Projects: Project[] = [
   {
+    id: 17,
+    title: 'Rust Web Backend',
+    shortDescMarkdown:
+      'For one of the easier college assignments, I decided to use Rust. It was a blast!',
+    longDescMarkdown:
+      'This is a simple web API that I wrote using Rust as an exercise with the language. It uses Axum as a web driver, Tokio as the async runtime, and Diesel as a database ORM. I honestly think it works really nicely.\r\n\r\nGo check it out on my GitHub!',
+    creationDate: dayjs('2025-03-10'),
+    updateDate: dayjs('2025-03-10'),
+    versions: [
+      {
+        name: 'GitHub',
+        links: [
+          {
+            title: 'GitHub',
+            url: 'https://github.com/Laurcons/cs-wsmt1m-individual',
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 16,
     title: "orar-discord: Bot for my Faculty's Timetables",
     shortDescMarkdown:

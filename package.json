@@ -4,26 +4,38 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-image-export-optimizer",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@mynaui/icons-react": "^0.3.9",
+    "@radix-ui/react-accordion": "^1.2.12",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
-    "autoprefixer": "10.4.14",
+    "class-variance-authority": "^0.7.1",
     "classnames": "^2.3.2",
+    "clsx": "^2.1.1",
     "dayjs": "^1.11.10",
-    "next": "13.4.7",
-    "postcss": "8.4.24",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "lucide-react": "^0.542.0",
+    "next": "^14.2.32",
+    "next-image-export-optimizer": "^1.19.0",
+    "postcss": "^8.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-markdown": "^9.0.0",
     "react-responsive": "^9.0.2",
     "supports-color": "8.1.1",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss": "3.3.2",
+    "tailwindcss": "^4.1.12",
+    "tw-animate-css": "^1.3.7",
     "typescript": "5.1.3"
+  },
+  "devDependencies": {
+    "eslint-config-next": "^14.2.32",
+    "prettier-plugin-organize-imports": "^4.2.0"
   }
 }

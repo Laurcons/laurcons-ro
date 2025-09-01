@@ -1,4 +1,4 @@
-import Title from '@/components/ui/Title';
+import Title from '@/components/ui/old/Title';
 import { Fonts } from '@/lib/fonts';
 
 export default function Banner() {
@@ -9,9 +9,7 @@ export default function Banner() {
           <Title tag="h1">
             <a href="/">Laurcons</a>
           </Title>
-          <i
-            className={`${Fonts.ubuntu.className} italic text-2xl self-end whitespace-nowrap text-gray-400`}
-          >
+          <i className={`${Fonts.ubuntu.className} italic text-2xl self-end whitespace-nowrap text-gray-400`}>
             Laurentiu Pricop
           </i>
         </div>
